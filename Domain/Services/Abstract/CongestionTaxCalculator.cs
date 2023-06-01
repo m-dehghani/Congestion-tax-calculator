@@ -1,4 +1,6 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.JavaScript;
 using Domain.Entities;
@@ -35,8 +37,9 @@ public class CongestionTaxCalculator
             {
                 totalFee += (diff.Days * 60);
                 var intervals = CreateIntervals(intervalStart, date, 30);
+                
                 totalFee += intervals.Select(i => GetTollFee(i, vehicle)).Sum();
-                totalFee += nextFee;
+                //totalFee += nextFee;
             }
         }
         if (totalFee > 60) totalFee = 60;
@@ -50,9 +53,25 @@ public class CongestionTaxCalculator
             return new List<DateTime>();
         }
 
-        var temp = Enumerable.Range(0, (int)(1 + end.Subtract(start).TotalMinutes/minutes));
-        return temp.Select(offset => start.AddMinutes(offset * minutes)).ToList();
-        
+        var temp = Enumerable.Range(0,((int)(end.Subtract(start).TotalMinutes/(minutes))));
+      var s= temp.Select(offset => start.AddMinutes(offset * minutes)).ToList();
+        bool filter(DateTime s)
+        {
+            var cond = (s.Hour, s.Minute) switch
+            {
+                (7, 30) => false,
+                { Hour: var x, Minute: var y } when x > 8 && (x <= 14) => false,
+                { Hour: var x, Minute: var y } when x == 16 => false,
+                (17, 30) => false,
+                { Hour: var x, Minute: var y } when x >= 18  && x <= 23 => false,
+                { Hour: var x, Minute: var y } when x >= 0 && x < 6 => false,
+                _ => true
+            };
+            return cond;
+        } 
+        var next = s.Where(filter);
+      return next.ToList();
+
     }
     private bool IsTollFreeVehicle(Vehicle vehicle)
     {
