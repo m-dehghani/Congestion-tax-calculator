@@ -1821,6 +1821,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "CongestionTaxCalculator.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Swashbuckle.AspNetCore": "6.4.0"
         },

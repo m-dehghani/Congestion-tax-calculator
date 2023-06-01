@@ -32,7 +32,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Infrastructure\\CongestionTaxCalculator.Infrastructure.csproj": {
+                "projectPath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Infrastructure\\CongestionTaxCalculator.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -9,7 +9,7 @@ namespace Domain.Entities
 {
     public class Car : Vehicle
     {
-        public Car(string name, string description , DateTime[] entranceDates)
+        public Car( DateTime[] entranceDates , string name ="", string description= "" )
         {
             Name = name;
             Description = description;

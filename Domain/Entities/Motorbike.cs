@@ -8,12 +8,13 @@ namespace Domain.Entities
 {
     public class Motorbike : Vehicle
     {
-        public Motorbike(string name, string description)
+        public Motorbike(DateTime[] entranceDates, string name = "", string description = "")
         {
             Name = name;
             Description = description;
+            Dates = entranceDates;
         }
-        
+
         public override string GetVehicleType()
         {
             return "Motorbike";
