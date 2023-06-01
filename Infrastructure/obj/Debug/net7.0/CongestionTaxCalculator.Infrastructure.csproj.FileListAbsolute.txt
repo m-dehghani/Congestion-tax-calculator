@@ -1,0 +1,15 @@
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.csproj.AssemblyReference.cache
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.AssemblyInfoInputs.cache
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.AssemblyInfo.cs
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.csproj.CoreCompileInputs.cache
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\bin\Debug\net7.0\CongestionTaxCalculator.Infrastructure.deps.json
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\bin\Debug\net7.0\CongestionTaxCalculator.Infrastructure.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\bin\Debug\net7.0\CongestionTaxCalculator.Infrastructure.pdb
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\bin\Debug\net7.0\CongestionTaxCalculator.Domain.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\bin\Debug\net7.0\CongestionTaxCalculator.Domain.pdb
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.csproj.CopyComplete
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\refint\CongestionTaxCalculator.Infrastructure.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.pdb
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\ref\CongestionTaxCalculator.Infrastructure.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bPuIqTpcSoxe25SSSyPsTXPJhjGfZ5BOwgt3HzlwMzYex7mwwBYixzWkqcJ6mwSAMja2HT3IqjcKmbQ4jqhTBg==",
+  "dgSpecHash": "Q+KKDeqWeOD0Xu8mSzgL0X28sD0JJyTdPXZgSncGXgqHYkfsthiYETYzTYa4wZUYiYpVG7qDF7MNLUKIXQULTA==",
   "success": true,
-  "projectFilePath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\Congestion-tax-calculator.Domain.csproj",
+  "projectFilePath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\CongestionTaxCalculator.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

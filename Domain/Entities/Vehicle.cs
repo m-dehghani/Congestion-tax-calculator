@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace congestion.calculator.Domain
+namespace Domain.Entities
 {
-    public interface Vehicle
+    public abstract class Vehicle:Entity
     {
-        string GetVehicleType();
+        public abstract string GetVehicleType();
     }
 }

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congestion-tax-calculator-UI", "Congestion-tax-calculator-UI\Congestion-tax-calculator-UI.csproj", "{2789269C-3890-40E8-83FA-0EB37D69484B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congestion-tax-calculator.Domain", "Domain\Congestion-tax-calculator.Domain.csproj", "{5A373ABF-53CD-4303-BBE3-89B1EA95D64F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTaxCalculator.Domain", "Domain\CongestionTaxCalculator.Domain.csproj", "{5A373ABF-53CD-4303-BBE3-89B1EA95D64F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congestion-tax-calculator.Infrastructure", "Infrastructure\Congestion-tax-calculator.Infrastructure.csproj", "{F67A7F76-C3A9-43D6-AF51-792EAD21A19A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CongestionTaxCalculator.Infrastructure", "Infrastructure\CongestionTaxCalculator.Infrastructure.csproj", "{F67A7F76-C3A9-43D6-AF51-792EAD21A19A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congestion-tax-calculator.Tests", "Tests\Congestion-tax-calculator.Tests.csproj", "{A057353A-1BDE-45E4-9951-EFF8615ACE03}"
 EndProject

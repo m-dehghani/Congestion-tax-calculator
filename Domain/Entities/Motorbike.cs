@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace congestion.calculator.Domain
+namespace Domain.Entities
 {
     public class Motorbike : Vehicle
     {
-        public string GetVehicleType()
+        public Motorbike(string name, string description)
+        {
+            Name = name;
+            Description = description;
+        }
+        
+        public override string GetVehicleType()
         {
             return "Motorbike";
         }

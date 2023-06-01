@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\Congestion-tax-calculator.Domain.csproj",
-      "projectName": "Congestion-tax-calculator.Domain",
-      "projectPath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\Congestion-tax-calculator.Domain.csproj",
+      "projectUniqueName": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\CongestionTaxCalculator.Domain.csproj",
+      "projectName": "CongestionTaxCalculator.Domain",
+      "projectPath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\CongestionTaxCalculator.Domain.csproj",
       "packagesPath": "C:\\Users\\Work\\.nuget\\packages\\",
       "outputPath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Domain\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,5 +1,5 @@
 using System;
-using congestion.calculator.Domain;
+using Domain.Entities;
 
 public class CongestionTaxCalculator
 {
