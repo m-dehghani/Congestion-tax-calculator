@@ -31,3 +31,9 @@ D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\obj\Deb
 D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\obj\Debug\net7.0\Congestion-tax-calculator-UI.pdb
 D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\obj\Debug\net7.0\Congestion-tax-calculator-UI.genruntimeconfig.cache
 D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\obj\Debug\net7.0\ref\Congestion-tax-calculator-UI.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\bin\Debug\net7.0\Data\Guthenburg
+D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\bin\Debug\net7.0\CongestionTaxCalculator.Domain.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\bin\Debug\net7.0\CongestionTaxCalculator.Infrastructure.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\bin\Debug\net7.0\CongestionTaxCalculator.Infrastructure.pdb
+D:\pouya\Dehghani\Congestion-tax-calculator\Congestion-tax-calculator-UI\bin\Debug\net7.0\CongestionTaxCalculator.Domain.pdb

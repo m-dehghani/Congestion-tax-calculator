@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Congestion-tax-calculator-UI/1.0.0": {
         "dependencies": {
+          "CongestionTaxCalculator.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -32,6 +33,14 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.4.3.0",
             "fileVersion": "1.4.3.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
           }
         }
       },
@@ -72,6 +81,20 @@
             "fileVersion": "6.4.0.0"
           }
         }
+      },
+      "CongestionTaxCalculator.Domain/1.0.0": {
+        "runtime": {
+          "CongestionTaxCalculator.Domain.dll": {}
+        }
+      },
+      "CongestionTaxCalculator.Infrastructure/1.0.0": {
+        "dependencies": {
+          "CongestionTaxCalculator.Domain": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "CongestionTaxCalculator.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -102,6 +125,13 @@
       "path": "microsoft.openapi/1.4.3",
       "hashPath": "microsoft.openapi.1.4.3.nupkg.sha512"
     },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore/6.4.0": {
       "type": "package",
       "serviceable": true,
@@ -129,6 +159,16 @@
       "sha512": "sha512-1Hh3atb3pi8c+v7n4/3N80Jj8RvLOXgWxzix6w3OZhB7zBGRwsy7FWr4e3hwgPweSBpwfElqj4V4nkjYabH9nQ==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    },
+    "CongestionTaxCalculator.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CongestionTaxCalculator.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

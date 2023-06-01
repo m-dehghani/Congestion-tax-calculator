@@ -1,8 +1,6 @@
 using Congestion_tax_calculator_UI.Services;
-using Domain.Entities;
-using Domain.Services.Concrete;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
+using Congestion_tax_calculator_UI.ViewModel;
 
 namespace Congestion_tax_calculator_UI.Controllers
 {
@@ -10,32 +8,29 @@ namespace Congestion_tax_calculator_UI.Controllers
     [Route("[controller]")]
     public class TaxController : ControllerBase
     {
-       
-        private readonly ILogger<TaxController> _logger;
-        private readonly TaxCalculator _taxCalculator;
-        private readonly IRepository _repository;
+        private readonly TaxService _taxService;
 
-        public TaxController(ILogger<TaxController> logger, TaxCalculator taxCalculator, IRepository repository)
+        public TaxController(TaxService taxService)
         {
-            _logger = logger;
-            _taxCalculator = taxCalculator;
-            _repository = repository;
+            _taxService = taxService;
         }
 
         [HttpPost(Name = "GetTax")]
-        public IActionResult Get(string cityName, string vehicleType, DateTime[] dates)
+        public IActionResult Get(TaxViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(modelState: ModelState);
+          
             try
             {
-                var city = _repository.GetCity(cityName);
-                TaxCalculator taxCalculator = new TaxCalculator(city);
-                Vehicle vehicle = VehicleFactory.CreateVehicle(vehicleType, dates);
-                return Ok(taxCalculator.GetTax(vehicle));
+                return Ok(_taxService.CalcTax(viewModel));
             }
             catch 
             {
                 return Problem();
             }
         }
+
+       
     }
 }

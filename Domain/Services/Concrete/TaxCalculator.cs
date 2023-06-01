@@ -10,7 +10,9 @@ namespace Domain.Services.Concrete
 {
     public class TaxCalculator
     {
+        private const int MAXTOTALFEEPERDAY = 60;
         private City _city;
+
 
         public TaxCalculator(City city)
         {
@@ -19,32 +21,40 @@ namespace Domain.Services.Concrete
 
         public int GetTax(Vehicle vehicle)
         {
-            var dates = vehicle.Dates;
+            int totalFee = CalcTotalFee(vehicle, vehicle.Dates);
+            return totalFee > MAXTOTALFEEPERDAY ? MAXTOTALFEEPERDAY : totalFee;
+        }
+
+        private static int CalcTotalFee(Vehicle vehicle, DateTime[] dates)
+        {
+            var totalFee = 0;
             DateTime intervalStart = dates[0];
-            int totalFee = 0;
             foreach (DateTime date in dates.Skip(1))
             {
                 //TODO: These should be read from City.GetTollFee()
-                int nextFee = TollService.GetTollFee(date, vehicle);
-                int tempFee = TollService.GetTollFee(intervalStart, vehicle);
-
-                var diff = date - intervalStart;
-                var minutes = diff.TotalMinutes;
-
-                if (minutes <= 60)
-                {
-                    if (totalFee > 0) totalFee -= tempFee;
-                    if (nextFee >= tempFee) tempFee = nextFee;
-                    totalFee += tempFee;
-                }
-                else
-                {
-                    totalFee += (diff.Days * 60);
-                    var intervals = TimeServices.CreateIntervals(intervalStart, date, 30);
-                    totalFee += intervals.Select(i => TollService.GetTollFee(i, vehicle)).Sum();
-                }
+               totalFee += GetFeeOfMinutes(vehicle, date, intervalStart, totalFee, TollService.GetTollFee(intervalStart, vehicle), TollService.GetTollFee(date, vehicle));
             }
-            if (totalFee > 60) totalFee = 60;
+
+            return totalFee;
+        }
+
+        private static int GetFeeOfMinutes(Vehicle vehicle, DateTime intervalEnd, DateTime intervalStart, int totalFee, int tempFee,
+            int nextFee)
+        {
+            var diff = intervalEnd - intervalStart;
+            if (diff.TotalMinutes <= 60)
+            {
+                if (totalFee > 0) totalFee -= tempFee;
+                if (nextFee >= tempFee) tempFee = nextFee;
+                totalFee += tempFee;
+            }
+            else
+            {
+                totalFee += (diff.Days * MAXTOTALFEEPERDAY);
+                var intervals = TimeServices.CreateIntervals(intervalStart, intervalEnd, 30);
+                totalFee += intervals.Select(i => TollService.GetTollFee(i, vehicle)).Sum();
+            }
+
             return totalFee;
         }
     }

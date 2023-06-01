@@ -1083,6 +1083,7 @@
       "xunit.runner.visualstudio/2.4.5": {},
       "Congestion-tax-calculator-UI/1.0.0": {
         "dependencies": {
+          "CongestionTaxCalculator.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
