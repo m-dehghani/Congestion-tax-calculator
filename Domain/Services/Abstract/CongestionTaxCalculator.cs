@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.JavaScript;
 using Domain.Entities;
 
 public class CongestionTaxCalculator
@@ -15,13 +17,13 @@ public class CongestionTaxCalculator
     {
         DateTime intervalStart = dates[0];
         int totalFee = 0;
-        foreach (DateTime date in dates)
+        foreach (DateTime date in dates.Skip(1))
         {
             int nextFee = GetTollFee(date, vehicle);
             int tempFee = GetTollFee(intervalStart, vehicle);
 
-            long diffInMillies = date.Millisecond - intervalStart.Millisecond;
-            long minutes = diffInMillies / 1000 / 60;
+            var diff = date - intervalStart;
+            var minutes = diff.TotalMinutes;
 
             if (minutes <= 60)
             {
@@ -31,6 +33,9 @@ public class CongestionTaxCalculator
             }
             else
             {
+                totalFee += (diff.Days * 60);
+                var intervals = CreateIntervals(intervalStart, date, 30);
+                totalFee += intervals.Select(i => GetTollFee(i, vehicle)).Sum();
                 totalFee += nextFee;
             }
         }
@@ -38,6 +43,17 @@ public class CongestionTaxCalculator
         return totalFee;
     }
 
+    private List<DateTime> CreateIntervals(DateTime start, DateTime end, int minutes)
+    {
+        if (end <= start || (end - start).TotalMinutes < minutes)
+        {
+            return new List<DateTime>();
+        }
+
+        var temp = Enumerable.Range(0, (int)(1 + end.Subtract(start).TotalMinutes/minutes));
+        return temp.Select(offset => start.AddMinutes(offset * minutes)).ToList();
+        
+    }
     private bool IsTollFreeVehicle(Vehicle vehicle)
     {
         if (vehicle == null) return false;

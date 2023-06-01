@@ -26,6 +26,29 @@ namespace Tests
             Tax tax = guthenBergTaxCalculator.calcTax(car1);
             Assert.Equal(60, tax.Amount);
         }
+
+        public class OldTax
+        {
+            [Fact]
+            public void OneDayShouldReturn60()
+            {
+                CongestionTaxCalculator taxCalculator = new CongestionTaxCalculator();
+                var car = new Car("car1", "string");
+                var tax = taxCalculator.GetTax(car, new DateTime[]{ new DateTime(2013, 01, 14, 21, 00, 00), new DateTime(2013, 01, 15, 21, 00, 00) });
+                Assert.Equal(60, tax);
+            }
+
+            [Fact]
+            public void DayShouldReturn60()
+            {
+                CongestionTaxCalculator taxCalculator = new CongestionTaxCalculator();
+                var car = new Car("car1", "string");
+                var tax = taxCalculator.GetTax(car, new DateTime[] { new DateTime(2013, 02 , 07, 06, 23 ,27), new DateTime(2013 , 02, 07, 15, 27, 00) });
+                Assert.Equal(60, tax);
+            }
+
+        }
+
     }
 
    
