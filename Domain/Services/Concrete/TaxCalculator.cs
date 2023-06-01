@@ -10,16 +10,42 @@ namespace Domain.Services.Concrete
 {
     public class TaxCalculator
     {
-        private RuleService rS;
+        private City _city;
 
-        public TaxCalculator(RuleService rS)
+        public TaxCalculator(City city)
         {
-            this.rS = rS;
+            this._city = city;
         }
 
-        public Tax calcTax(Vehicle car1)
+        public int GetTax(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            var dates = vehicle.Dates;
+            DateTime intervalStart = dates[0];
+            int totalFee = 0;
+            foreach (DateTime date in dates.Skip(1))
+            {
+                //TODO: These should be read from City.GetTollFee()
+                int nextFee = TollService.GetTollFee(date, vehicle);
+                int tempFee = TollService.GetTollFee(intervalStart, vehicle);
+
+                var diff = date - intervalStart;
+                var minutes = diff.TotalMinutes;
+
+                if (minutes <= 60)
+                {
+                    if (totalFee > 0) totalFee -= tempFee;
+                    if (nextFee >= tempFee) tempFee = nextFee;
+                    totalFee += tempFee;
+                }
+                else
+                {
+                    totalFee += (diff.Days * 60);
+                    var intervals = TimeServices.CreateIntervals(intervalStart, date, 30);
+                    totalFee += intervals.Select(i => TollService.GetTollFee(i, vehicle)).Sum();
+                }
+            }
+            if (totalFee > 60) totalFee = 60;
+            return totalFee;
         }
     }
 }

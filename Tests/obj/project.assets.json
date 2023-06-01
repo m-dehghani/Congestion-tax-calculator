@@ -1848,7 +1848,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "CongestionTaxCalculator.Domain": "1.0.0"
+          "CongestionTaxCalculator.Domain": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/CongestionTaxCalculator.Infrastructure.dll": {}

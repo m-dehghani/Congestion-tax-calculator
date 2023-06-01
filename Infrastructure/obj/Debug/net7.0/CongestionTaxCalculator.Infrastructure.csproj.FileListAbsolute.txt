@@ -13,3 +13,4 @@ D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\Cong
 D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\refint\CongestionTaxCalculator.Infrastructure.dll
 D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\CongestionTaxCalculator.Infrastructure.pdb
 D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\obj\Debug\net7.0\ref\CongestionTaxCalculator.Infrastructure.dll
+D:\pouya\Dehghani\Congestion-tax-calculator\Infrastructure\bin\Debug\net7.0\Data\Guthenburg

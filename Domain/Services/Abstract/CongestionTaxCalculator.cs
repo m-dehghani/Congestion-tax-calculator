@@ -37,9 +37,7 @@ public class CongestionTaxCalculator
             {
                 totalFee += (diff.Days * 60);
                 var intervals = CreateIntervals(intervalStart, date, 30);
-                
                 totalFee += intervals.Select(i => GetTollFee(i, vehicle)).Sum();
-                //totalFee += nextFee;
             }
         }
         if (totalFee > 60) totalFee = 60;
@@ -54,8 +52,7 @@ public class CongestionTaxCalculator
         }
 
         var temp = Enumerable.Range(0,((int)(end.Subtract(start).TotalMinutes/(minutes))));
-      var s= temp.Select(offset => start.AddMinutes(offset * minutes)).ToList();
-        bool filter(DateTime s)
+        bool Filter(DateTime s)
         {
             var cond = (s.Hour, s.Minute) switch
             {
@@ -69,10 +66,10 @@ public class CongestionTaxCalculator
             };
             return cond;
         } 
-        var next = s.Where(filter);
-      return next.ToList();
 
+        return temp.Select(offset => start.AddMinutes(offset * minutes)).ToList().Where(Filter).ToList();
     }
+
     private bool IsTollFreeVehicle(Vehicle vehicle)
     {
         if (vehicle == null) return false;

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HpOmokWQnNisISOuZFCgbOAcZQvCUaBVbpcivDN0+qZUQ68k1J4RcWVZQiTjlOCej2cZOH2Bt4p/f6Se0gxSow==",
+  "dgSpecHash": "I2mUtZOC8V3zoR87KekgixyGXvUddt2KvE2AVZRgbW/JukNVkNcP3BwSj7oJCaVEePsx9wuZ4+bWpFhLvtA3xQ==",
   "success": true,
   "projectFilePath": "D:\\pouya\\Dehghani\\Congestion-tax-calculator\\Infrastructure\\CongestionTaxCalculator.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Work\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

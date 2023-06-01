@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
+   
     public class City:Entity
     {
-        public string CityName;
-        public string[][] Rules;
+        public string CityName { get; set; }
 
-        public City(string cityName , string[][] rules)
-        {
-            CityName = cityName;
-            Rules = rules;
-        }
+        public DateTime[]? TollFreeDates { get; set; }
+       
+        //These can be read from file or DB
+        public List<CityTaxLineItem> TaxLineItems { get; set; } = new List<CityTaxLineItem>();
+
+        
     }
 }

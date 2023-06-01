@@ -9,5 +9,6 @@ namespace Domain.Entities
     public abstract class Vehicle:Entity
     {
         public abstract string GetVehicleType();
+        public DateTime[] Dates { get; set; }
     }
 }
