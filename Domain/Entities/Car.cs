@@ -15,6 +15,9 @@ namespace Domain.Entities
             Description = description;
             Dates = entranceDates;
         }
+
+        
+
         public override string GetVehicleType()
         {
             return "Car";

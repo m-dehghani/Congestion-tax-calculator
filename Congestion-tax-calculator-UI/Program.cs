@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IRepository, FileRepository>();
-builder.Services.AddScoped<TaxCalculator>();
+builder.Services.AddScoped<NewTaxCalculator>();
 builder.Services.AddScoped<TaxService>();
 
 var app = builder.Build();

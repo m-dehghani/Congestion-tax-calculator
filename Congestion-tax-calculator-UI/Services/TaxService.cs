@@ -14,10 +14,10 @@ namespace Congestion_tax_calculator_UI.Services
         {
             _repository = repository;
         }
-        public int  CalcTax(TaxViewModel viewModel)
+        public decimal  CalcTax(TaxViewModel viewModel)
         {
             var city = _repository.GetCity(viewModel.CityName);
-            TaxCalculator taxCalculator = new TaxCalculator(city);
+            NewTaxCalculator taxCalculator = new NewTaxCalculator(city);
             Vehicle vehicle = VehicleFactory.CreateVehicle(viewModel.vehicleType, viewModel.Dates);
             return taxCalculator.GetTax(vehicle);
         }
