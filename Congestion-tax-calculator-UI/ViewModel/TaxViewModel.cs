@@ -8,9 +8,15 @@ namespace Congestion_tax_calculator_UI.ViewModel
        
         [Required]
         public string CityName { get; set; }
+        
         [Required]
         public string vehicleType { get; set; }
-        public DateTime[] Dates { get; set; }
+      
+        public List<DateTime> Dates { get; set; }
+
+        [Required]
+        public string PlateNo { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if(!Dates.Any())

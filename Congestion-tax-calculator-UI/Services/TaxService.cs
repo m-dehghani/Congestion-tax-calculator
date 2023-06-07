@@ -1,25 +1,27 @@
 ﻿using Congestion_tax_calculator_UI.ViewModel;
-using Domain.Entities;
+using Domain.Entities.Abstract;
+using Domain.Services.Abstract;
 using Domain.Services.Concrete;
-using Infrastructure.Data;
+using Infrastructure.Data.Abstract;
+using Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Congestion_tax_calculator_UI.Services
 {
     public class TaxService
     {
-        private readonly IRepository _repository;
+        private readonly CityRepository _repository;
+        private readonly CityService _cityService;
 
-        public TaxService(IRepository repository)
+        public TaxService(CityRepository repository, CityService cityService)
         {
             _repository = repository;
+            _cityService = cityService;
         }
         public decimal  CalcTax(TaxViewModel viewModel)
         {
-            var city = _repository.GetCity(viewModel.CityName);
-            NewTaxCalculator taxCalculator = new NewTaxCalculator(city);
-            Vehicle vehicle = VehicleFactory.CreateVehicle(viewModel.vehicleType, viewModel.Dates);
-            return taxCalculator.GetTax(vehicle);
+            return _cityService.CalcTax(viewModel.vehicleType,viewModel.PlateNo, viewModel.Dates);
+           
         }
 
     }

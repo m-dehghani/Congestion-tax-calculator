@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Enums
 {
+    [Flags]
     public enum TollFreeVehicles
     {
         Motorcycle = 0,

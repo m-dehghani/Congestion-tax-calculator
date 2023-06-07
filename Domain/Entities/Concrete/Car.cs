@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities.Abstract;
 using Domain.Enums;
 
-namespace Domain.Entities
+namespace Domain.Entities.Concrete
 {
     public class Car : Vehicle
     {
-        public Car( DateTime[] entranceDates , string name ="", string description= "" )
+        public Car(List<DateTime> entriesDates, string plateNo, string description = "") : base(entriesDates, plateNo, description)
         {
-            Name = name;
-            Description = description;
-            Dates = entranceDates;
+
         }
-
         
-
         public override string GetVehicleType()
         {
             return "Car";

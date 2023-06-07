@@ -1,6 +1,6 @@
 using Congestion_tax_calculator_UI.Services;
+using Domain.Services.Abstract;
 using Domain.Services.Concrete;
-using Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IRepository, FileRepository>();
+builder.Services.AddSingleton<CityService>();
 builder.Services.AddScoped<NewTaxCalculator>();
 builder.Services.AddScoped<TaxService>();
 

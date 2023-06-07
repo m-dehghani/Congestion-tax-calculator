@@ -1,11 +1,11 @@
-﻿using Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities.Abstract;
 using Microsoft.VisualBasic;
 
 namespace Domain.Services.Concrete
@@ -23,11 +23,11 @@ namespace Domain.Services.Concrete
 
         public decimal GetTax(Vehicle vehicle)
         {
-            if(vehicle.IsTollFree) return 0;
+            if(_city.IsTollFreeVehicle(vehicle)) return 0;
 
             decimal sum = 0;
-            var firstDate = vehicle.Dates[0];
-            var secondDate = vehicle.Dates[1];
+            var firstDate = vehicle.Entries[0];
+            var secondDate = vehicle.Entries[1];
           
             sum = SumofDays(secondDate, firstDate, sum);
 
@@ -53,7 +53,7 @@ namespace Domain.Services.Concrete
             if (diffDays > 0)
             {
                 var notTollFreeDates = Enumerable.Range(0, diffDays).Select(r => firstDate.AddDays(r))
-                    .Where(s => !_city.TollFreeDates.Contains(s));
+                    .Where(s => !_city.IsTollFreeDate(s));
 
                 sum += notTollFreeDates.Count() * _city.MaxTotalfeePerDay;
             }
