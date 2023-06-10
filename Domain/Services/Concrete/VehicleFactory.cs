@@ -10,7 +10,7 @@ namespace Congestion_tax_calculator_UI.Services
         public static Vehicle CreateVehicle(string type,string plateNo, List<DateTime> dates)
         {
             var vehicle = _vehicles.FirstOrDefault(v => v.PlateNo == plateNo);
-            if (vehicle == null) return vehicle;
+            if (vehicle != null) return vehicle;
            switch(type.ToLower())
            {
                 case "car":

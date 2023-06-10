@@ -27,9 +27,8 @@ namespace Domain.Services.Concrete
                     default:
                         throw new NotImplementedException();
                 }
+                _cities.Add(city);
             }
-            
-            _cities.Add(city);
             return city;
         }
     }
