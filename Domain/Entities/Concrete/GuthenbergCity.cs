@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities.Abstract;
 using Domain.Enums;
+using Domain.Services.Abstract;
 using Domain.Services.Concrete;
 
 namespace Domain.Entities.Concrete
@@ -12,8 +13,8 @@ namespace Domain.Entities.Concrete
     public class GuthenbergCity : City
     {
 
-        private readonly NewTaxCalculator taxCalculator;
-        public GuthenbergCity()
+        private readonly ICalculator taxCalculator;
+        public GuthenbergCity(ICalculator taxCalculator)
         {
             //These parameter should be read from DB repository 
 

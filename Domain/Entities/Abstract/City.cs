@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Enums;
+using Domain.Services.Abstract;
 
 namespace Domain.Entities.Abstract
 {

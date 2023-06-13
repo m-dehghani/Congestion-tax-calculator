@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities.Abstract;
+using Domain.Services.Abstract;
 using Microsoft.VisualBasic;
 
 namespace Domain.Services.Concrete
 {
-    public class NewTaxCalculator
+    public class NewTaxCalculator : ICalculator
     {
         
         private City _city;
